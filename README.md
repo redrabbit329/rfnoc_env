@@ -2712,7 +2712,48 @@ update-initramfs: Generating /boot/initrd.img-5.3.0-28-generic
 
 
 
+CMake 설치
+-------------
 
+UHD를 gig source로부터 manually 설치할 경우, 다음 gcc 버전을 설치해 줘야 한다.
+C ++ 컴파일러
+다음 컴파일러는 작동하는 것으로 알려져 있으며 공식적으로 지원됩니다.
+
+GCC> = 5.4.0
+ cmake 홈페이지에 들어가서 최신 버전을 확인한다. (글 쓴 당시 최신 버전 3.16.0)
+
+https://cmake.org/download/
+
+
+CMake
+목적 : 프로젝트 빌드 파일 생성
+최소 버전 : 3.8
+사용법 : 빌드 시간 (필수)
+다운로드 URL : http://www.cmake.org/cmake/resources/software.html
+
+
+# 압축 해제
+$ tar -xvzf cmake-3.16.0.tar.gz
+ 
+# 디렉토리 이동
+# cd cmake-3.16.0/
+
+# 설치
+$ ./bootstrap --prefix=/usr/local
+$ make
+$ make install
+
+# 환경변수 등록
+$ vi ~/.bash_profile
+ 
+# /usr/local/bin을 추가시켜준다
+PATH=/usr/local/bin:$PATH:$HOME/bin
+
+$ cmake --version
+ 
+cmake version 3.16.0
+ 
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
 
 
 
